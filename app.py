@@ -3,7 +3,7 @@ from flask import Flask, jsonify
 app = Flask(__name__)
 
 
-@app.get("/check")
+@app.get("/")
 def hello_world():
     # response = jsonify({'text': 'success!'})
     # response.headers.add(
@@ -12,3 +12,7 @@ def hello_world():
     # )
     # https://chickooo.netlify.app/
     return {'text': 'success!'}
+
+
+if __name__ == '__main__':
+    app.run()
