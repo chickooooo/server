@@ -1,12 +1,13 @@
 from flask import Flask
 
 
+# create flask app
 app = Flask(__name__)
 
+# main file
 if __name__ == '__main__':
     app.run()
 
 
-@app.get("/")
-def hello_world():
-    return {'text': 'success!'}
+# importing routes
+from routes import base, spam_text
