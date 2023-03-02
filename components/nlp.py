@@ -1,16 +1,6 @@
-from flask import request
-from app import app
-from components.spam_text import utils
 
+def post_spam_text_response(request):
 
-# setup the model and other dependencies
-setup = utils.Setup()
-
-
-# spam text message classification
-@app.post('/api/spam_text_class')
-def post_spam_text():
-    
     # default values
     status_code = 400
     data = {
@@ -41,7 +31,7 @@ def post_spam_text():
         return data, status_code
 
     # otherwise make predictions
-    probability = setup.predict([body['text']])
+    probability = 0.876
 
     # update data
     status_code = 200
