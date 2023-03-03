@@ -8,4 +8,5 @@ RUN pip install -r requirements.txt
 
 EXPOSE 5000
 
-ENTRYPOINT [ "./gunicorn.sh" ] 
+# ENTRYPOINT [ "./gunicorn.sh" ] 
+CMD python ./app.py
