@@ -21,8 +21,3 @@ def page_not_found(error):
 @app.post('/api/spam_text_class')
 def post_spam_text():
     return nlp.post_spam_text_response(request)
-
-
-# main file
-if __name__ == '__main__':
-    app.run(host='0.0.0.0')

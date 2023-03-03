@@ -1,3 +1,9 @@
+from machine_learning.spam_text_class.setup import Setup
+
+
+# setup the model and its dependencies
+setup = Setup()
+
 
 def post_spam_text_response(request):
 
@@ -31,7 +37,7 @@ def post_spam_text_response(request):
         return data, status_code
 
     # otherwise make predictions
-    probability = 0.876
+    probability = setup.predict(body['text'])
 
     # update data
     status_code = 200
