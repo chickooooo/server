@@ -1,8 +1,8 @@
-from machine_learning.spam_text_class.setup import Setup
+# from machine_learning.spam_text_class.setup import Setup
 
 
-# setup the model and its dependencies
-setup = Setup()
+# # setup the model and its dependencies
+# setup = Setup()
 
 
 def post_spam_text_response(request):
@@ -37,7 +37,8 @@ def post_spam_text_response(request):
         return data, status_code
 
     # otherwise make predictions
-    probability = setup.predict(body['text'])
+    # probability = setup.predict(body['text'])
+    probability = 0.50
 
     # update data
     status_code = 200
