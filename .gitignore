@@ -1,3 +1,6 @@
 __pycache__/
 .vscode/
 venv/
+
+# models
+domain/models/movie_review/movie_review_model

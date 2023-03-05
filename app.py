@@ -1,5 +1,5 @@
 from flask import Flask, request
-from components import base, nlp
+from application.components import base, movie_review
 
 # create flask app
 app = Flask(__name__)
@@ -11,16 +11,16 @@ def get_home():
     return base.get_home_response()
 
 
-# unknown route
+# unknown routes
 @app.errorhandler(404)
 def page_not_found(error):
     return base.get_404_response()
 
 
-# spam text message classification
-@app.post('/api/spam_text_class')
-def post_spam_text():
-    return nlp.post_spam_text_response(request)
+# movie review sentiment analysis
+@app.post('/api/movie_review')
+def post_movie_review():
+    return movie_review.post_movie_review_response(request)
 
 
 if __name__ == "__main__":
