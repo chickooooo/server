@@ -1,8 +1,10 @@
 from flask import Flask, request
+from flask_cors import CORS
 from application.components import base, movie_review
 
 # create flask app
 app = Flask(__name__)
+CORS(app)
 
 
 # home route
